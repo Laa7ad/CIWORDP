@@ -1,0 +1,18 @@
+name: DIGITALOCEN_DEPLOY.yml
+
+on:
+ push:
+  branches: [ main ]
+jobs:
+ Build:
+   runs-on: self-hosted
+   
+   
+   steps:
+     - uses: actions/checkout@main
+     - name: create .env
+       run: echo 'PORT=${(secrets.PORT)}' > .env
+       
+     - name: run Build
+       run: docker-compose up -d
+      
