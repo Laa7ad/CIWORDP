@@ -1,8 +1,9 @@
-name: DIGITALOCEN_DEPLOY.yml
+name: DIGITALOCEN_DEPLOY
 
 on:
  push:
   branches: [ main ]
+  
 jobs:
  Build:
    runs-on: self-hosted
